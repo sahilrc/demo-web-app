@@ -20,6 +20,7 @@ function App() {
       const res = await fetch(`${API_URL}/tasks`);
       const data = await res.json();
       setTasks(data.tasks);
+      setFilter('all'); // BUG FIX: reset filter on refresh to avoid stale state
     } catch (err) {
       console.error('Failed to fetch tasks:', err);
     } finally {
