@@ -16,12 +16,13 @@ let tasks = [
   { id: uuidv4(), title: 'Design frontend UI', status: 'todo', priority: 'medium', createdAt: new Date().toISOString() },
 ];
 
-// GET all tasks
+// GET all tasks — now supports search query
 app.get('/api/tasks', (req, res) => {
-  const { status, priority } = req.query;
+  const { status, priority, q } = req.query;
   let filtered = tasks;
   if (status) filtered = filtered.filter(t => t.status === status);
   if (priority) filtered = filtered.filter(t => t.priority === priority);
+  if (q) filtered = filtered.filter(t => t.title.toLowerCase().includes(q.toLowerCase()));
   res.json({ tasks: filtered, total: filtered.length });
 });
 
