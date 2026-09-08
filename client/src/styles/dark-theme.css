@@ -1,0 +1,12 @@
+body.dark {
+  background-color: #1a1a2e;
+  color: #eee;
+}
+
+body.dark .app h1 { color: #e0e0e0; }
+body.dark .task-form input { background: #16213e; color: #eee; border-color: #333; }
+body.dark .task-form select { background: #16213e; color: #eee; }
+body.dark .task-item { background: #16213e; border-color: #333; }
+body.dark .filters button { background: #16213e; color: #eee; border-color: #333; }
+body.dark .filters button.active { background: #3498db; }
+.theme-toggle { position: fixed; top: 1rem; right: 1rem; padding: 0.5rem 1rem; border-radius: 20px; border: none; cursor: pointer; background: #333; color: #fff; }
